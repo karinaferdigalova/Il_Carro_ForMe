@@ -1,15 +1,19 @@
 package tests;
 
 import manager.ApplicationManager;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 
 public class TestBase {
-    static ApplicationManager app = new ApplicationManager ();
+    static ApplicationManager app = new ApplicationManager();
 
-    public void setApp(){
-        app.init ();
+    @BeforeClass
+    public void setUp() {
+        app.init(); // инициализация WebDriver и helperUser
     }
 
-    public void tearDown(){
-        app.stop ();
+    @AfterClass
+    public void tearDown() {
+        //app.stop(); // закрытие браузера
     }
 }
