@@ -14,6 +14,6 @@ public class TestBase {
 
     @AfterClass
     public void tearDown() {
-        //app.stop(); // закрытие браузера
+        app.stop(); // закрытие браузера
     }
 }
